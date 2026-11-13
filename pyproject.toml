@@ -42,13 +42,16 @@ joblib = "^1.0.0"
 matplotlib = "^3.5.0"
 tqdm = "^4.0.0"
 pydantic = "^2.0.0"
+duckdb = {version = ">=1.0.0", optional = true}
+polars = {version = ">=1.0.0", optional = true}
 ta-lib = {version = "*", optional = true}
 optuna = {version = "^3.0.0", optional = true}
 
 [tool.poetry.extras]
 indicators = ["ta-lib"]
 optimizer  = ["optuna"]
-all        = ["ta-lib", "optuna"]
+screener   = ["duckdb", "polars"]
+all        = ["ta-lib", "optuna", "duckdb", "polars"]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
